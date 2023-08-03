@@ -48,7 +48,7 @@ const generateArray = (key, template, num = 10,) => {
     return [`${key}|${num}`, template[0]]
 }
 const generateObject = (key, template) => {
-    return [`${key}|1`, template]
+    return [`${key}`, template]
 }
 const generateDate = (key) => {
     return [`${key}|1`, `Mock.Random.date()`]
