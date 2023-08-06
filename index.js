@@ -1,7 +1,9 @@
-
 // 把这个变量转换成一个mockjs的模板的脚本
 // 类型: string number boolean array object date
 export const generateMockTemplate = (obj) => {
+    if(Array.isArray(obj)){
+        return generateMockTemplateArray(obj)
+    }
     const keys = Object.keys(obj)
     const template = {}
     keys.forEach(key => {
@@ -35,6 +37,14 @@ export const generateMockTemplate = (obj) => {
     })
     return template
 }
+
+function generateMockTemplateArray(array) {
+    const obj = {
+        list: [array[0]]
+    }
+    return generateMockTemplate(obj)
+}
+
 const generateString = (key, num = 5) => {
     return `${key}|${num}`
 }
