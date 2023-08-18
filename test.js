@@ -1,4 +1,3 @@
-import Mock from 'mockjs'
 import {generateMockTemplate} from "./index.js";
 import fs from 'node:fs'
 import clipboardy from 'clipboardy'
