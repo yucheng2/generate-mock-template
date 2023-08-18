@@ -10,5 +10,6 @@ eval(`obj = ${jsFile}`)
 const res = generateMockTemplate(obj)
 // const mockRes = Mock.mock(res)
 // const test = JSON.stringify(mockRes)
-fs.writeFileSync('./test.json', JSON.stringify(res))
-clipboardy.writeSync(JSON.stringify(res))
+const wrapper = ` Mock.mock(${JSON.stringify(res)})`
+fs.writeFileSync('./test.json', wrapper)
+clipboardy.writeSync(wrapper)
